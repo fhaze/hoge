@@ -2,6 +2,11 @@ define kill_process
 	kill $$(ps | perl -pe 's/^ +//' | grep $(1) | grep -E -e '^[0-9]+' -o)
 endef
 
+.PHONY: setup
+setup:
+	go version
+	go mod download
+
 .PHONY: build
 build:
 	go build -o mock cmd/mock/main.go
