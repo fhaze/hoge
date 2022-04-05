@@ -17,7 +17,7 @@ func main() {
 		if msg, err := srv.Get(); err == nil {
 			c.String(http.StatusOK, msg)
 		}
-		return c.String(http.StatusOK, "internal server error")
+		return c.String(http.StatusInternalServerError, "internal server error")
 	})
 
 	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", prt)))
