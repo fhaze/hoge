@@ -4,8 +4,8 @@ endef
 
 .PHONY: build
 build:
-	go build -o mock cmd/mock/*.go
-	go build -o app cmd/app/*.go
+	go build -o mock cmd/mock/main.go
+	go build -o app cmd/app/main.go
 
 .PHONY: test
 test: build
